@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 const Review = require("./review.js");
+const { urlencoded } = require("express");
 
 const listingSchema = new Schema({
     title: {
@@ -11,10 +12,8 @@ const listingSchema = new Schema({
         type: String,
     },
     image: {
-        type: String,
-        default: "https://unsplash.com/photos/a-person-walks-down-a-narrow-sunlit-street-qXNkrU5ENIw",
-        set: (v) => v === "" ? "https://unsplash.com/photos/a-person-walks-down-a-narrow-sunlit-street-qXNkrU5ENIw" : v,
-
+        url: String,
+        filename: String,
     },
     price: {
         type: Number,
