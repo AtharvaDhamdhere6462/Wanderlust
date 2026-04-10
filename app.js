@@ -98,6 +98,10 @@ app.use((req, res, next) => {
     next();
 });
 
+app.get("/", (req, res) => {
+    res.redirect("/listings");
+});
+
 // app.get("/fakeUser", async(req, res) => {
 //     const user = new User({
 //         email: "fake@example.com",
